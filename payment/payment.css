@@ -1,0 +1,17 @@
+.checkout-page { min-height: 100%; height: auto; background: var(--main-color); color: #20292e; padding: 32px 16px; }
+.checkout { box-sizing: border-box; width: min(100%, 540px); margin: 0 auto; padding: 36px; background: #fff; border-radius: 24px; box-shadow: 0 12px 40px #27313a14; }
+.checkout__back, .checkout__contact { color: #38474f; text-underline-offset: 4px; }
+.checkout__brand { margin-top: 36px; font-size: 17px; color: #58676f; }
+.checkout h1 { margin: 8px 0 12px; font-size: 36px; font-weight: 700; }
+.checkout__intro { margin-bottom: 28px; font-size: 19px; }
+.checkout__test { padding: 12px 14px; border-radius: 10px; background: #fff2ce; color: #654b10; }
+.checkout label { display: block; margin: 20px 0 8px; font-size: 18px; font-weight: 700; }
+.checkout input { box-sizing: border-box; display: block; width: 100%; min-height: 50px; padding: 12px 14px; border: 1px solid #87949c; border-radius: 10px; font: inherit; font-size: 18px; background: #fafbfc; color: #20292e; }
+.checkout input:focus-visible, .checkout a:focus-visible, .checkout button:focus-visible { outline: 3px solid #526c82; outline-offset: 3px; }
+.checkout small { display: block; margin-top: 8px; color: #58676f; font-size: 14px; }
+.checkout__submit { width: 100%; min-height: 52px; margin: 28px 0 0; font-size: 19px; }
+.checkout__submit:disabled { opacity: .6; cursor: wait; }
+.checkout__message { margin: 12px 0; color: #9b2828; }
+.checkout__message:empty { display: none; }
+.checkout__note { margin-top: 24px; color: #58676f; font-size: 16px; }
+@media (max-width: 480px) { .checkout-page { padding: 16px 12px; } .checkout { padding: 24px; border-radius: 18px; } .checkout h1 { font-size: 30px; } }

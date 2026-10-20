@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оплата — Vladislav Yurin</title>
+    <meta name="description" content="Оплата консультаций и менторского сопровождения Владислава Юрина.">
+    <link rel="icon" href="../img/icon.png">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body class="checkout-page">
+<main class="checkout">
+    <a class="checkout__back" href="../">← На главную</a>
+    <div class="checkout__brand">Vladislav Yurin · Java Mentor</div>
+    <h1>Оплата услуг</h1>
+    <p class="checkout__intro">Укажите согласованную сумму и назначение платежа.</p>
+    <p class="checkout__test">Тестовая оплата: реальные деньги не списываются.</p>
+    <form id="payment-form">
+        <label for="payer-name">ФИО плательщика</label>
+        <input id="payer-name" name="payerName" type="text" autocomplete="name" maxlength="100" required
+               placeholder="Иван Иванов">
+        <label for="amount">Сумма, ₽</label>
+        <input id="amount" name="amount" type="text" inputmode="decimal" autocomplete="off"
+               placeholder="8 000" maxlength="12" required aria-describedby="amount-hint">
+        <small id="amount-hint">Введите сумму в рублях, при необходимости — с копейками.</small>
+        <label for="description">Назначение платежа</label>
+        <input id="description" name="description" type="text" maxlength="140"
+               value="Консультация в области IT" required>
+        <label for="email">Электронная почта</label>
+        <input id="email" name="email" type="email" autocomplete="email" maxlength="254" required
+               placeholder="you@example.ru">
+        <button class="payment-button checkout__submit" type="submit">Перейти к оплате</button>
+        <p id="payment-message" class="checkout__message" role="status" aria-live="polite"></p>
+    </form>
+    <p class="checkout__note">Данные карты вводятся на защищённой странице Т‑Банка.</p>
+    <a class="checkout__contact" href="https://t.me/vladislavyurin" target="_blank" rel="noopener noreferrer">Вопрос по оплате? Напишите мне</a>
+</main>
+<script src="https://securepay.tinkoff.ru/html/payForm/js/tinkoff_v2.js" defer></script>
+<script src="config.js" defer></script>
+<script src="payment.js" defer></script>
+</body>
+</html>
