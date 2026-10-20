@@ -9,16 +9,15 @@ merchant's T-Bank dashboard. Payments use the production terminal.
 
 ## Before accepting real payments
 
-- Finish the bank's store approval and cash-register setup. At implementation
-  time the cash-register screen offered connection options rather than showing
-  a connected register.
-- If receipt data is required by the connected register, replace `receipt: null`
-  with `{ emailCompany, taxation, tax }` using the merchant's actual settings.
-  Do not copy another merchant's tax configuration. The code constructs receipt
-  item prices and totals in integer kopecks.
+- Checks T-Business is connected. Production requests must include Receipt;
+  otherwise the terminal rejects Init with error 309 / expected.receipt.
+- The merchant confirmed USN Income (`usn_income`), no VAT (`none`) and the seller
+  email `vlad.yurin98@gmail.com`. These settings are now in `payment/config.js`.
+  The code constructs receipt item prices and totals in integer kopecks.
+  `receiptRequired` prevents sending a request if fiscal configuration is missing.
 - The dashboard marked tests 1, 2, 3, 7 and 8 as passed on the DEMO terminal.
   Receipt tests used merchant-authorized dummy tax settings in a separate local
-  copy. Those settings are not deployed; production receipt settings remain null.
+  copy. Production settings were subsequently confirmed separately by the merchant.
 - Confirm payments in the bank's dashboard. A browser redirect does not prove
   that a payment succeeded. This site does not automatically provision services.
 

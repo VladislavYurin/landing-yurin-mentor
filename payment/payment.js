@@ -53,6 +53,10 @@ form.addEventListener("submit", (event) => {
         message.textContent = "Онлайн-оплата пока настраивается. Пожалуйста, напишите мне для оплаты.";
         return;
     }
+    if (config.receiptRequired && (!config.receipt?.emailCompany || !config.receipt?.taxation || !config.receipt?.tax)) {
+        message.textContent = "Онлайн-оплата временно недоступна. Пожалуйста, напишите мне для оплаты.";
+        return;
+    }
     if (typeof window.doPay !== "function") {
         message.textContent = "Не удалось загрузить форму Т‑Банка. Обновите страницу и попробуйте ещё раз.";
         return;
