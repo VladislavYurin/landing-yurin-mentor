@@ -8,14 +8,22 @@
     <link rel="icon" href="../img/icon.png">
     <link rel="stylesheet" href="../main.css">
     <link rel="stylesheet" href="payment.css">
+    <link rel="stylesheet" href="../legal.css">
 </head>
 <body class="checkout-page">
+<div class="site-bar"><a class="site-bar__brand" href="../">Vladislav Yurin</a><div class="site-bar__details"><span>ИП Юрин Владислав Дмитриевич</span><span>ИНН 702409261815 · ОГРНИП 326700000021103</span><span class="site-bar__contacts"><a href="tel:+79521618116">+7 952 161-81-16</a><a href="mailto:vlad.yurin98@gmail.com">vlad.yurin98@gmail.com</a></span></div><nav aria-label="Основная навигация"><a href="../offer/">Оферты и реквизиты</a><a href="../payment/">Оплата</a></nav></div>
 <main class="checkout">
     <a class="checkout__back" href="../">← На главную</a>
     <div class="checkout__brand">Vladislav Yurin · Java Mentor</div>
     <h1>Оплата услуг</h1>
     <p class="checkout__intro">Укажите согласованную сумму и назначение платежа.</p>
     <form id="payment-form">
+        <label for="service">Услуга</label>
+        <select id="service" name="service" required>
+            <option value="consultation">Консультация / мок-собеседование</option>
+            <option value="contract-from-zero">Сопровождение с нуля</option>
+            <option value="contract-gradeup">Повышение грейда</option>
+        </select>
         <label for="payer-name">ФИО плательщика</label>
         <input id="payer-name" name="payerName" type="text" autocomplete="name" maxlength="100" required
                placeholder="Иван Иванов">
@@ -29,6 +37,10 @@
         <label for="email">Электронная почта</label>
         <input id="email" name="email" type="email" autocomplete="email" maxlength="254" required
                placeholder="you@example.ru">
+        <label class="offer-accept" for="accept-offer">
+            <input id="accept-offer" name="acceptOffer" type="checkbox" required>
+            <span>Я ознакомился и согласен с <a id="selected-offer" href="../offer/" target="_blank" rel="noopener">офертой на выбранную услугу</a>.</span>
+        </label>
         <button class="payment-button checkout__submit" type="submit">Перейти к оплате</button>
         <p id="payment-message" class="checkout__message" role="status" aria-live="polite"></p>
     </form>
@@ -38,5 +50,6 @@
 <script src="https://securepay.tinkoff.ru/html/payForm/js/tinkoff_v2.js" defer></script>
 <script src="config.js" defer></script>
 <script src="payment.js" defer></script>
+<footer class="legal-footer"><strong>ИП Юрин Владислав Дмитриевич</strong><p>ИНН 702409261815 · ОГРНИП 326700000021103</p><p><a href="mailto:vlad.yurin98@gmail.com">vlad.yurin98@gmail.com</a> · <a href="https://t.me/vladislavyurin">Telegram</a></p><nav aria-label="Юридическая информация"><a href="../offer/">Разовые консультации</a><a href="../contract-from-zero/">Сопровождение с нуля</a><a href="../contract-gradeup/">Повышение грейда</a></nav></footer>
 </body>
 </html>

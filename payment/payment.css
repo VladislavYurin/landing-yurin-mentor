@@ -13,5 +13,10 @@
 .checkout__submit:disabled { opacity: .6; cursor: wait; }
 .checkout__message { margin: 12px 0; color: #9b2828; }
 .checkout__message:empty { display: none; }
+.checkout select { box-sizing: border-box; width: 100%; min-height: 50px; padding: 12px; background: #fafbfc; border: 1px solid #87949c; border-radius: 10px; color: #20292e; font: inherit; font-size: 18px; }
+.checkout select:focus-visible { outline: 3px solid #526c82; outline-offset: 3px; }
+.checkout .offer-accept { display: flex; align-items: flex-start; gap: 12px; margin-top: 24px; font-size: 16px; font-weight: 400; line-height: 1.5; }
+.checkout .offer-accept input { flex: 0 0 20px; width: 20px; height: 20px; min-height: 20px; margin-top: 2px; padding: 0; accent-color: #4c5459; }
+.offer-accept a { color: #354f66; text-underline-offset: 3px; }
 .checkout__note { margin-top: 24px; color: #58676f; font-size: 16px; }
 @media (max-width: 480px) { .checkout-page { padding: 16px 12px; } .checkout { padding: 24px; border-radius: 18px; } .checkout h1 { font-size: 30px; } }
